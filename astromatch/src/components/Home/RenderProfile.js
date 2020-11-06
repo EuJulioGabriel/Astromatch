@@ -1,17 +1,29 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { ContainerHome, ContainerMessage, ContainerButtons, InfoProfile, 
-         ContentProfile, NameAge, Biography, ProfileImage } from './StyleHome'
+         ContentProfile, NameAge, Biography, ProfileImage, Text } from './StyleHome'
+
 import CircularProgress from '@material-ui/core/CircularProgress'
 
 import LikedButton from '../LikedButton/LikedButton'
 import UnlikedButton from '../UnlikedButton/UnlikedButton'
 
 function RenderProfile(props) {
+    const [match, setMatch] = useState(false)
+
+    const likedYou = () => {
+        if(match && !props.traveled) {
+            return (
+                <Text>O último perfil também gostou de você.</Text>
+            )
+        }
+    }
+
     const renderInScreen = () => {
         if (props.displayedProfile.length === 0 && !props.traveled) {
             return (
                 <ContainerHome>
+                    {likedYou()}
                     <CircularProgress />
                 </ContainerHome>
             )
@@ -40,6 +52,7 @@ function RenderProfile(props) {
                         <LikedButton 
                             idProfile={props.displayedProfile.id}
                             getProfile={props.getProfile}
+                            setMatch={setMatch}
                         />
                     </ContainerButtons>
                 </ContainerHome>

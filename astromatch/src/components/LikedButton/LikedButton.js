@@ -7,11 +7,10 @@ import { Button, Text } from './StyleLikedButton'
 
 function LikedButton(props) {
     const [id, setId] = useState(0)
-    const [match, setMatch] = useState(false)
 
     useEffect (()=> {
+        props.setMatch(false)
         setId(props.idProfile)
-        setMatch(false)
     }, [props.idProfile])
 
     useEffect (()=> {
@@ -36,28 +35,16 @@ function LikedButton(props) {
         axios
         .post(`${url}choose-person`, body,)
         .then((response) => {
-            setMatch(response.data.isMatch)
-            props.getProfile()
+            props.setMatch(response.data.isMatch)
+            window.setTimeout(props.getProfile(), 2000)
         })
         .catch((error) => {
             alert(error.message)
         })
     }
 
-    const LikedAlso = () => {
-        if (match) {
-            return (
-                <Text>Gostou de você</Text>
-            )
-        } else {
-            return (
-                <Button onClick={onClickLiked}>❤</Button>
-            )
-        }
-    }
-
     return (
-        LikedAlso()
+        <Button onClick={onClickLiked}>❤</Button>
     )
 }
 
