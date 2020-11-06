@@ -7,21 +7,24 @@ import RenderProfile from './RenderProfile'
 
 function Home(props) {
     const [displayedProfile, setDisplayedProfile] = useState([])
-    const [traveled, settraveled] = useState(false)
+    const [traveled, setTraveled] = useState(false)
 
-    useEffect(() => {
+    useEffect(() => {    
+        setTraveled(false)
         getProfile()
-        settraveled(false)
     }, [props.deleteSwipes])
 
     const getProfile = () => {
+        setDisplayedProfile([])
+        setTraveled(false)
+
         axios
         .get(`${url}person`,)
         .then((response) => {
             if (response.data.profile !== null) {
                 setDisplayedProfile(response.data.profile)
             } else {
-                settraveled(true)
+                setTraveled(true)
                 setDisplayedProfile([])
             }   
         })

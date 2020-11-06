@@ -12,19 +12,21 @@ function Matches(props) {
     const [load, setLoad] = useState(false)
 
     useEffect(()=> {
+        setLoad(false)
+        setMatches([])
         showMatches()
     }, [props.deleteMatches])
 
     const showMatches = () => {
-            axios
-            .get(`${url}matches`,)
-            .then((response) => {
-                setMatches(response.data.matches)
-                setLoad(true)
-            })
-            .catch((error) => {
-                alert(error.message)
-            })     
+        axios
+        .get(`${url}matches`,)
+        .then((response) => {
+            setMatches(response.data.matches)
+            setLoad(true)
+        })
+        .catch((error) => {
+            alert(error.message)
+        })     
     }
 
     const renderInScreen = () => {

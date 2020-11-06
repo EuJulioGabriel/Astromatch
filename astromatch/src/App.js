@@ -24,8 +24,8 @@ function App() {
     axios
     .put(`${url}clear`,)
     .then(() => {
-      setDeleteMatches(true)
       setDeleteSwipes(true)
+      setDeleteMatches(true)
     })
     .catch((error) => {
       alert(error.message)

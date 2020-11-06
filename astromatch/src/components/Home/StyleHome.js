@@ -37,6 +37,7 @@ export const ContentProfile = styled.div`
     display: grid;
     grid-row: 3/3;
     grid-column: 2/3;
+    background-color: rgba(0,0,0,.4);
 `
 
 export const NameAge = styled.div`
@@ -62,4 +63,10 @@ export const ProfileImage = styled.img`
     display: grid;
     grid-row: 1/3;
     grid-column: 2/3;
+`
+
+export const Text = styled.p`
+    font-size: 16px;
+    font-weight: bold;
+    color: green;
 `

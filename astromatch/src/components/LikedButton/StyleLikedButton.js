@@ -14,9 +14,3 @@ export const Button = styled.button`
         color: white;
     }
 `
-
-export const Text = styled.p`
-    font-size: 16px;
-    font-weight: bold;
-    color: green;
-`
