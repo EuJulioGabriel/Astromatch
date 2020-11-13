@@ -8,7 +8,7 @@ e o npm como gerenciador de pacotes do NodeJS .
 Sobre a divisão dos arquivos, há três setores. Os `components` são 
 os componentes em si do meu projeto (Header, Home, Matches, LikedButton, UnlikedButton). 
 Já o segundo setor é o `images` que por sua vez são os ícones e imagens do projeto.
-O terceiro setor corresponde as contantes da aplicação.
+O terceiro setor é o `constants` corresponde as contantes da aplicação.
 
 ## Sobre
 Esse foi um dos primeiros projetos que fiz em React.
