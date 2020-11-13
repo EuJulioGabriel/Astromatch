@@ -5,9 +5,10 @@
 ## Stack
 Esse é um projeto de Frontend Web feito utilizando ReactJS, HTML e CSS; 
 e o npm como gerenciador de pacotes do NodeJS .
-Sobre a divisão dos arquivos, há dois setores. Os `components` são 
-os componentes em si do meu projeto (Header, Home, Matches, BotaoGostei, BotaoNaoGostei). 
+Sobre a divisão dos arquivos, há três setores. Os `components` são 
+os componentes em si do meu projeto (Header, Home, Matches, LikedButton, UnlikedButton). 
 Já o segundo setor é o `images` que por sua vez são os ícones e imagens do projeto.
+O terceiro setor corresponde as contantes da aplicação.
 
 ## Sobre
 Esse foi um dos primeiros projetos que fiz em React.
@@ -18,7 +19,7 @@ Existe um botão Limpar swipes e matches que começa a oferecer novamente todas 
 
 ## Deploy com Surge
 
-<a href="http://dark-need.surge.sh/">Astromatch</a>
+<a href="http://astromatchjulio.surge.sh/">Astromatch</a>
 
 ## Instruções para rodar
 Por ser um projeto com ReactJS, há a necessidade do NodeJS. Com ele em 
